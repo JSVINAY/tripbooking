@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router'; // To navigate to success page
-
+import { HttpClient } from '@angular/common/http'; // To send HTTP requests
 @Component({
   selector: 'app-paymentform',
   templateUrl: './paymentform.component.html',
@@ -19,6 +19,7 @@ export class PaymentformComponent {
     if (this.cardNumber && this.expiryDate && this.cvv) {
       alert('Processing payment...');
       this.isPaymentSuccessful = true;
+      
 
       // Simulate payment processing delay
       setTimeout(() => {

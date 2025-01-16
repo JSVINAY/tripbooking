@@ -1,44 +1,99 @@
 /* payment-success.component.css */
 .success-container {
-    text-align: center;
-    padding: 20px;
-    max-width: 600px;
-    margin: 0 auto;
+  text-align: center;
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 40px auto;
+  background: rgb(18, 18, 47);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  color: #fff;
+}
+
+.success-container h1 {
+  color: #22c55e;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(34, 197, 94, 0.2);
+}
+
+.success-container p {
+  font-size: 1.4rem;
+  margin: 1.5rem 0;
+  color: #f3f4f6;
+  line-height: 1.6;
+}
+
+.success-container button {
+  padding: 14px 28px;
+  margin: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.success-container button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.success-container button:active {
+  transform: translateY(0);
+}
+
+/* Home button styles */
+.success-container button:not(.download-ticket button) {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.success-container button:not(.download-ticket button):hover {
+  background-color: #2563eb;
+}
+
+/* Download ticket section */
+.download-ticket {
+  margin-top: 30px;
+  padding: 20px;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.download-ticket button {
+  background-color: #10b981;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.download-ticket button:hover {
+  background-color: #059669;
+}
+
+/* Add responsive design */
+@media (max-width: 768px) {
+  .success-container {
+      margin: 20px;
+      padding: 30px 15px;
   }
-  
+
   .success-container h1 {
-    color: green;
-    font-size: 2rem;
+      font-size: 2rem;
   }
-  
+
   .success-container p {
-    font-size: 1.2rem;
-    margin: 1rem 0;
+      font-size: 1.2rem;
   }
-  
+
   .success-container button {
-    padding: 10px 20px;
-    margin: 10px;
-    background-color: #2563eb;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+      width: 100%;
+      margin: 10px 0;
   }
-  
-  .success-container button:hover {
-    background-color: #1d4ed8;
-  }
-  
-  .download-ticket {
-    margin-top: 20px;
-  }
-  
-  .download-ticket button {
-    background-color: #34d399;
-  }
-  
-  .download-ticket button:hover {
-    background-color: #10b981;
-  }
-  
+}

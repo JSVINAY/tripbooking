@@ -1,0 +1,181 @@
+/* Global Styles */
+.about-container {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  section {
+    padding: 80px 0;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #1a73e8;
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('https://d3nn873nee648n.cloudfront.net/900x600/16619/220-SM724516.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 300px; /* Reduced height from 400px to 300px */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+  }
+  
+  
+  .hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-section .subtitle {
+    font-size: 1.5rem;
+    opacity: 0.9;
+  }
+  
+  /* Company Overview */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+  }
+  
+  .stat-item {
+    text-align: center;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .stat-item h3 {
+    font-size: 2.5rem;
+    color: #1a73e8;
+    margin-bottom: 10px;
+  }
+  
+  /* Mission Section */
+  .mission-section {
+    background-color: #f8f9fa;
+  }
+  
+  .mission-section p {
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Features Section */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+  }
+  
+  .feature-item {
+    text-align: center;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .feature-item:hover {
+    transform: translateY(-10px);
+  }
+  
+  .feature-item i {
+    font-size: 2.5rem;
+    color: #1a73e8;
+    margin-bottom: 20px;
+  }
+  
+  .feature-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
+  /* Leadership Section */
+  .leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+  }
+  
+  .leader-card {
+    text-align: center;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .leader-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #ddd;
+    margin: 0 auto 20px;
+  }
+  
+  .leader-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .features-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .stats-grid,
+    .leadership-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .hero-section h1 {
+      font-size: 2.5rem;
+    }
+  
+    section {
+      padding: 60px 0;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .stats-grid,
+    .features-grid,
+    .leadership-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .hero-section h1 {
+      font-size: 2rem;
+    }
+  
+    .hero-section .subtitle {
+      font-size: 1.2rem;
+    }
+  }

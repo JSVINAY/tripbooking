@@ -8,6 +8,10 @@ import { PaymentformComponent } from './paymentform/paymentform.component';
 import { PaymentsuccessComponent } from './paymentsuccess/paymentsuccess.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { AboutpageComponent } from './aboutpage/aboutpage.component';
+import { ContactpageComponent } from './contactpage/contactpage.component';
+import { TermsComponent } from './terms/terms.component';
+import { PoliciesComponent } from './policies/policies.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +19,11 @@ import { FooterComponent } from './footer/footer.component';
     PaymentformComponent,
     PaymentsuccessComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    AboutpageComponent,
+    ContactpageComponent,
+    TermsComponent,
+    PoliciesComponent
   ],
   imports: [
     BrowserModule,

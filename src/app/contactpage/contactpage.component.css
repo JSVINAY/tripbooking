@@ -1,0 +1,109 @@
+/* General styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+  }
+  
+  .contact-us-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #ffffff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  /* Heading styles */
+  .contact-us-container h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  
+  .contact-us-container p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  /* Contact options container */
+  .contact-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  /* Contact card */
+  .contact-card {
+    background-color: #f4f6f7;
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .contact-card img {
+    width: 60px;
+    margin-bottom: 15px;
+  }
+  
+  .contact-card h2 {
+    font-size: 1.5rem;
+    color: #34495e;
+    margin-bottom: 10px;
+  }
+  
+  .contact-card p {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin-bottom: 10px;
+  }
+  
+  .contact-card h3 {
+    font-size: 1.2rem;
+    color: #2980b9;
+    font-weight: bold;
+  }
+  
+  .contact-card button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-card button:hover {
+    background-color: #2980b9;
+  }
+  
+  /* FAQ link */
+  .faq-link {
+    margin-top: 20px;
+  }
+  
+  .faq-link a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .faq-link a:hover {
+    color: #2980b9;
+  }
+  
+  

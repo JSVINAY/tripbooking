@@ -12,6 +12,7 @@ import { PoliciesComponent } from './policies/policies.component';
 import { TermsComponent } from './terms/terms.component';
 
 const routes: Routes = [
+  { path: '', component: HomeComponent },
   { path: 'payment', component: PaymentformComponent },  // Home route
   { path: 'payment-success', component: PaymentsuccessComponent }, // Success route
   { path: 'home', component: HomeComponent }, // Success route
@@ -19,9 +20,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'policies', component: PoliciesComponent },
-  { path: 'terms', component: TermsComponent },
-
-  
+  { path: 'terms', component: TermsComponent }, 
   { path: 'about', component: AboutpageComponent }, // Success route
   { path: 'contact', component: ContactpageComponent } // Success route
 ];

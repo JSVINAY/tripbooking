@@ -1,23 +1,25 @@
-/* Styling for the container */
+
+
+/* General Container */
 .home {
     text-align: center;
     padding: 20px;
     margin-left: 50px;
   }
   
-  /* Updated headline styling */
+  /* Header Styling */
   .home h2 {
     font-size: 2.5em;
     font-weight: bold;
     color: #333;
-    text-align: center;
     margin-bottom: 40px;
     text-transform: uppercase;
     letter-spacing: 2px;
     position: relative;
-    font-family: 'Arial', sans-serif; /* Same font family as before */
+    font-family: 'Arial', sans-serif;
   }
   
+  /* Header Underline Effect */
   .home h2::before {
     content: '';
     position: absolute;
@@ -25,44 +27,42 @@
     bottom: -10px;
     width: 60px;
     height: 3px;
-    background-color: #007bff; /* Blue color for emphasis */
+    background-color: #007bff;
     transform: translateX(-50%);
   }
   
-  .home h2 span {
-    color: #007bff; /* Color for part of the title */
-  }
-  
-  /* Card container setup */
+  /* Card Container */
   .card-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Improved responsiveness */
     gap: 20px;
     justify-content: center;
   }
   
-  /* Trip card styling */
+  /* Trip Card */
   .trip-card {
     position: relative;
-    width: 300px;
-    cursor: pointer;
     border: 2px solid #ccc;
     border-radius: 10px;
     overflow: hidden;
-    transition: transform 0.3s ease;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
+  /* Hover Effect on Card */
   .trip-card:hover {
     transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
   }
   
+  /* Image in Trip Card */
   .card-image {
     width: 100%;
     height: 200px;
     object-fit: cover;
   }
   
-  /* Card info */
+  /* Card Info */
   .card-info {
     padding: 10px;
   }
@@ -76,14 +76,14 @@
     margin: 5px 0;
   }
   
-  /* Price styling for rupees */
+  /* Price Styling */
   .price {
     font-size: 1.1em;
-    color: #28a745; /* Green for the price */
+    color: #28a745;
     font-weight: bold;
   }
   
-  /* Popup styling */
+  /* Popup Styling */
   .popup {
     position: fixed;
     top: 0;
@@ -97,14 +97,21 @@
     z-index: 1000;
   }
   
+  /* Centered Popup Content */
   .popup-content {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
     width: 500px;
+    max-height: 80vh; /* Ensure popup is not too tall */
+    overflow-y: auto; /* Make content scrollable if too long */
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   
+  /* Image in Popup */
   .popup-content img {
     width: 100%;
     height: 250px;
@@ -112,7 +119,17 @@
     margin-bottom: 15px;
   }
   
-  /* Button styling */
+  /* Input Fields for Number of People */
+  .popup-content input {
+    padding: 8px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 80%;
+    margin-bottom: 15px;
+  }
+  
+  /* Button Styling */
   button {
     background-color: #007bff;
     color: #fff;
@@ -121,9 +138,21 @@
     border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
+    transition: background-color 0.3s ease;
   }
   
+  /* Button Hover Effect */
   button:hover {
     background-color: #0056b3;
   }
   
+  /* Responsiveness Enhancements */
+  @media (max-width: 768px) {
+    .card-container {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* More responsive grid */
+    }
+  
+    .popup-content {
+      width: 90%; /* Popup takes up more space on smaller screens */
+    }
+  }

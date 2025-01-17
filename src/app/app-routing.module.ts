@@ -16,16 +16,16 @@ import { DestinationsComponent } from './destinations/destinations.component';
 
 
 const routes: Routes = [
+  { path: '', component: HomeComponent },
   { path: 'payment', component: PaymentformComponent },  // Home route
   { path: 'payment-success', component: PaymentsuccessComponent }, // Success route
   { path: 'home', component: HomeComponent },
-  { path: '', component: HomeComponent }, // Success route
+ // Success route
   { path: 'booking', component: BookingformComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'policies', component: PoliciesComponent },
   { path: 'terms', component: TermsComponent },
-  { path: '', component: HomeComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'bookings', component: BookingsComponent },
   { path: 'destinations', component: DestinationsComponent },

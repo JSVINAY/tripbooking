@@ -15,7 +15,6 @@ import { PoliciesComponent } from './policies/policies.component';
 import { HomeComponent } from './homepage/homepage.component';
 import { BookingformComponent } from './bookingform/bookingform.component';
 import { LoginComponent } from './login/login.component';
-import { Route } from '@angular/router';
 import { SignupComponent } from './signup/signup.component';
 
 @NgModule({

@@ -21,7 +21,20 @@
         <p>Price: {{ selectedTrip.price | currency:'INR' }}</p>
         <p>Duration: {{ selectedTrip.duration }} days</p>
         <p>Starts from: {{ selectedTrip.startDate }}</p>
+        
+        <!-- New field to enter number of people -->
+        <div>
+          <label for="peopleCount">Number of People:</label>
+          <input type="number" id="peopleCount" [(ngModel)]="peopleCount" min="1" placeholder="Enter number of people" />
+        </div>
+  
+        <!-- Display total price -->
+        <div *ngIf="peopleCount > 0">
+          <p>Total Price: {{ calculateTotalPrice() | currency:'INR' }}</p>
+        </div>
+  
         <a routerLink="/booking"><button (click)="closeModal()">Book Now</button></a>
       </div>
     </div>
-</div>
+  </div>
+  

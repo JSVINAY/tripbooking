@@ -1,15 +1,15 @@
 <div class="booking-form">
     <h2>Book Your Stay</h2>
-    <form>
+    <form (ngSubmit)="onSubmit()">
+    
       <!-- Select Your Destination -->
       <label for="destination">Select Your Destination:</label>
-      <select id="destination" name="destination" required>
-        <option value="">Select a destination</option>
+      <select id="destination" name="destination" required [(ngModel)]="booking.destination">
+        <option value="" disabled>Select a destination</option>
         <option value="paris">Paris</option>
         <option value="london">London</option>
         <option value="newyork">New York</option>
         <option value="tokyo">Tokyo</option>
-        <!-- Add more destinations as required -->
       </select><br />
   
       <!-- Passenger Details in Table -->
@@ -21,76 +21,53 @@
             <th>Age</th>
             <th>Gender</th>
             <th>Food Type</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
-          <!-- Loop for 5 passengers -->
-          <tr>
-            <td><input type="text" name="name1" placeholder="Enter name" required /></td>
-            <td><input type="number" name="age1" min="1" placeholder="Enter age" required /></td>
-            <td><input type="text" name="gender1" placeholder="Enter gender" required /></td>
+          <tr *ngFor="let passenger of passengers; let i = index">
+            <td><input type="text" [(ngModel)]="passenger.name" name="name{{i}}" placeholder="Enter name" required aria-label="Passenger name" /></td>
+            <td><input type="number" [(ngModel)]="passenger.age" name="age{{i}}" min="1" placeholder="Enter age" required aria-label="Passenger age" /></td>
+            <td><input type="text" [(ngModel)]="passenger.gender" name="gender{{i}}" placeholder="Enter gender" required aria-label="Passenger gender" /></td>
             <td>
-              <label><input type="radio" name="food-type1" value="veg" required /> Veg</label>
-              <label><input type="radio" name="food-type1" value="non-veg" /> Non-Veg</label>
+              <select [(ngModel)]="passenger.foodType" name="food-type{{i}}" required aria-label="Food preference">
+                <option value="veg">Veg</option>
+                <option value="non-veg">Non-Veg</option>
+                <option value="vegan">Vegan</option>
+                <option value="gluten-free">Gluten-Free</option>
+              </select>
             </td>
-          </tr>
-          <tr>
-            <td><input type="text" name="name2" placeholder="Enter name" required /></td>
-            <td><input type="number" name="age2" min="1" placeholder="Enter age" required /></td>
-            <td><input type="text" name="gender2" placeholder="Enter gender" required /></td>
             <td>
-              <label><input type="radio" name="food-type2" value="veg" required /> Veg</label>
-              <label><input type="radio" name="food-type2" value="non-veg" /> Non-Veg</label>
-            </td>
-          </tr>
-          <tr>
-            <td><input type="text" name="name3" placeholder="Enter name" required /></td>
-            <td><input type="number" name="age3" min="1" placeholder="Enter age" required /></td>
-            <td><input type="text" name="gender3" placeholder="Enter gender" required /></td>
-            <td>
-              <label><input type="radio" name="food-type3" value="veg" required /> Veg</label>
-              <label><input type="radio" name="food-type3" value="non-veg" /> Non-Veg</label>
-            </td>
-          </tr>
-          <tr>
-            <td><input type="text" name="name4" placeholder="Enter name" required /></td>
-            <td><input type="number" name="age4" min="1" placeholder="Enter age" required /></td>
-            <td><input type="text" name="gender4" placeholder="Enter gender" required /></td>
-            <td>
-              <label><input type="radio" name="food-type4" value="veg" required /> Veg</label>
-              <label><input type="radio" name="food-type4" value="non-veg" /> Non-Veg</label>
-            </td>
-          </tr>
-          <tr>
-            <td><input type="text" name="name5" placeholder="Enter name" required /></td>
-            <td><input type="number" name="age5" min="1" placeholder="Enter age" required /></td>
-            <td><input type="text" name="gender5" placeholder="Enter gender" required /></td>
-            <td>
-              <label><input type="radio" name="food-type5" value="veg" required /> Veg</label>
-              <label><input type="radio" name="food-type5" value="non-veg" /> Non-Veg</label>
+              <button class="plus-minus-button" type="button" (click)="removePassenger(i)" aria-label="Remove passenger">-</button>
             </td>
           </tr>
         </tbody>
-      </table><br />
+      </table>
   
-      <!-- Type of Stay (Check Multiple Options) -->
-      <label>Type of Stay:</label><br />
-      <div class="options">
-        <label><input type="checkbox" name="stay-type" value="hotel" /> Hotel</label>
-        <label><input type="checkbox" name="stay-type" value="resort" /> Resort</label>
-        <label><input type="checkbox" name="stay-type" value="hostel" /> Hostel</label>
-        <label><input type="checkbox" name="stay-type" value="villa" /> Villa</label>
-      </div><br />
+      <!-- Add Passenger Button -->
+      <button class="plus-minus-button" type="button" (click)="addPassenger()" aria-label="Add passenger">+</button><br />
+  
+     
+      <!-- Type of Stay (Dropdown) -->
+<label for="stay-type">Type of Stay:</label>
+<select id="stay-type" name="stay-type" [(ngModel)]="stayTypes" required aria-label="Type of stay options">
+  <option value="" disabled>Select a type of stay</option>
+  <option value="hotel">Hotel</option>
+  <option value="resort">Resort</option>
+  <option value="hostel">Hostel</option>
+  <option value="villa">Villa</option>
+</select><br />
+
   
       <!-- Pick-up Location -->
       <label for="pickup-location">Pick-up Location:</label>
-      <input type="text" id="pickup-location" name="pickup-location" required /><br />
+      <input type="text" [(ngModel)]="booking.pickupLocation" name="pickup-location" id="pickup-location" required placeholder="Enter pick-up location" aria-label="Pick-up location" /><br />
   
       <!-- Drop Location -->
       <label for="drop-location">Drop Location:</label>
-      <input type="text" id="drop-location" name="drop-location" required /><br />
+      <input type="text" [(ngModel)]="booking.dropLocation" name="drop-location" id="drop-location" required placeholder="Enter drop location" aria-label="Drop location" /><br />
   
       <!-- Submit Button -->
-      <a routerLink="/"><button type="submit">Submit</button></a>
+      <a routerLink="/payment"><button type="submit">Submit</button></a>
     </form>
   </div>

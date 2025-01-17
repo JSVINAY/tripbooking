@@ -79,6 +79,8 @@ nav {
 }
 
 /* Responsive Design */
+
+/* Large screens (1024px and above) */
 @media (max-width: 1024px) {
     .logo h1 {
         font-size: 1.8rem;
@@ -89,6 +91,7 @@ nav {
     }
 }
 
+/* Medium screens (768px and below) */
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
@@ -104,6 +107,7 @@ nav {
         gap: 1.2rem;
         width: 100%;
         padding-top: 1rem;
+        margin-top: 1rem;
     }
 
     .nav-links a {
@@ -114,6 +118,7 @@ nav {
     }
 }
 
+/* Small screens (480px and below) */
 @media (max-width: 480px) {
     .logo h1 {
         font-size: 1.4rem;
@@ -127,6 +132,17 @@ nav {
     .open-modal-btn {
         width: 100%;
         padding: 0.8rem;
+        font-size: 1.1rem;
+    }
+}
+
+/* Extra small screens (375px and below) */
+@media (max-width: 375px) {
+    .logo h1 {
+        font-size: 1.3rem;
+    }
+
+    .nav-links a {
         font-size: 1.1rem;
     }
 }

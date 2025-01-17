@@ -1,15 +1,15 @@
 // home.component.ts
 import { Component } from '@angular/core';
-import { Router } from 'express';
+import { Router } from '@angular/router';  // Corrected import for Router
 
 @Component({
   selector: 'app-home',
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css']
 })
-export class HomeComponent  {
+export class HomeComponent {
   selectedTrip: any = null;
-  
+  peopleCount: number = 1;  // Default to 1 person
 
   trips = [
     {
@@ -55,6 +55,7 @@ export class HomeComponent  {
       startDate: '2025-12-01',
     }
   ];
+
   route: any;
 
   openModal(trip: any) {
@@ -62,6 +63,12 @@ export class HomeComponent  {
   }
 
   closeModal() {
-   this.route.navigate(['./booking']);
+    // Pass peopleCount to the booking page
+    this.route.navigate(['/booking'], { queryParams: { peopleCount: this.peopleCount } });
+  }
+
+  // Calculate the total price based on number of people
+  calculateTotalPrice(): number {
+    return this.selectedTrip.price * this.peopleCount;
   }
 }

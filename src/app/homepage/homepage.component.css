@@ -1,0 +1,129 @@
+/* Styling for the container */
+.home {
+    text-align: center;
+    padding: 20px;
+    margin-left: 50px;
+  }
+  
+  /* Updated headline styling */
+  .home h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    font-family: 'Arial', sans-serif; /* Same font family as before */
+  }
+  
+  .home h2::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    width: 60px;
+    height: 3px;
+    background-color: #007bff; /* Blue color for emphasis */
+    transform: translateX(-50%);
+  }
+  
+  .home h2 span {
+    color: #007bff; /* Color for part of the title */
+  }
+  
+  /* Card container setup */
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  /* Trip card styling */
+  .trip-card {
+    position: relative;
+    width: 300px;
+    cursor: pointer;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .trip-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  /* Card info */
+  .card-info {
+    padding: 10px;
+  }
+  
+  .card-info h3 {
+    font-size: 1.2em;
+    margin: 0;
+  }
+  
+  .card-info p {
+    margin: 5px 0;
+  }
+  
+  /* Price styling for rupees */
+  .price {
+    font-size: 1.1em;
+    color: #28a745; /* Green for the price */
+    font-weight: bold;
+  }
+  
+  /* Popup styling */
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 500px;
+    text-align: center;
+  }
+  
+  .popup-content img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+  
+  /* Button styling */
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  

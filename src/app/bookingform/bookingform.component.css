@@ -1,0 +1,128 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400;500&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    background-image: url('https://www.istockphoto.com/resources/images/PhotoFTLP/P4-NOV-iStock-2165931620.jpg'); 
+    background-size: cover; /* Ensure the image covers the full background */
+    background-position: center center; /* Center the image */
+    background-attachment: fixed; /* Ensure the image stays fixed while scrolling */
+    height: 100vh; /* Ensure the background covers the entire viewport height */
+    color: #333;
+}
+
+/* Booking Form */
+.booking-form {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.85); /* Slight opacity to contrast with the background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Headline Styling */
+h2, h3 {
+    text-align: center;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+/* Adjust the spacing for h3 */
+h3 {
+    margin-top: 30px;
+}
+
+/* Label Styling */
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: 500;
+}
+
+/* Input, Select, and Button Styling */
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Styling for Radio and Checkbox inputs */
+input[type="radio"], input[type="checkbox"] {
+    width: auto;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+/* Table Header and Cell Styling */
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Table Inputs */
+table input[type="text"], table input[type="number"] {
+    width: 90%;
+}
+
+/* Options label spacing */
+.options label {
+    margin-right: 20px;
+}
+
+/* Button Styling */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    font-family: 'Poppins', sans-serif; /* Consistent font for button */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Form Styling */
+form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.destination-options label {
+    display: block; /* Makes each label take a full line */
+    margin-bottom: 10px; /* Adds space between each checkbox option */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .booking-form {
+        width: 100%;
+        padding: 15px;
+    }
+
+    /* Table Input adjustments */
+    table td input {
+        width: 100%;
+    }
+
+    /* Button Font Size */
+    button {
+        font-size: 14px;
+    }
+}

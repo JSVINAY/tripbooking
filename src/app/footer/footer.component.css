@@ -1,121 +1,124 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400;500&display=swap');
+
 /* Footer */
 footer {
     background: #1f2937;
     color: white;
-    padding: 2rem 2rem 1rem; /* Reduced top and bottom padding */
-    font-family: 'Arial', sans-serif;
-  }
-  
-  /* Footer Content Grid */
-  .footer-content {
+    padding: 1.5rem 2rem; /* Reduced padding for a more compact footer */
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Footer Content Grid */
+.footer-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem; /* Slightly reduced gap */
-    margin-bottom: 1.5rem; /* Reduced bottom margin */
-  }
-  
-  /* Footer Section Header */
-  .footer-section h3 {
-    font-size: 1.25rem; /* Slightly smaller font size */
-    margin-bottom: 0.8rem; /* Reduced bottom margin */
+    gap: 1.25rem; /* Adjusted gap between sections */
+    margin-bottom: 1rem; /* Reduced bottom margin */
+}
+
+/* Footer Section Header */
+.footer-section h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem; /* Slightly smaller font size */
+    margin-bottom: 0.5rem; /* Reduced bottom margin */
     color: #60a5fa; /* Soft blue for section titles */
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.8px;
     font-weight: 600;
-  }
-  
-  /* Footer Section Text */
-  .footer-section p {
+}
+
+/* Footer Section Text */
+.footer-section p {
     opacity: 0.85;
-    margin-bottom: 0.8rem; /* Reduced bottom margin */
+    margin-bottom: 0.6rem; /* Reduced bottom margin */
     line-height: 1.5; /* Adjusted line height for compactness */
     font-size: 0.95rem; /* Slightly smaller font size */
-  }
-  
-  /* Social Links Container */
-  .social-links {
+}
+
+/* Social Links Container */
+.social-links {
     display: flex;
-    gap: 1rem; /* Reduced spacing between icons */
-  }
-  
-  /* Social Links */
-  .social-links a {
+    gap: 0.8rem; /* Reduced spacing between icons */
+}
+
+/* Social Links */
+.social-links a {
     color: white;
     text-decoration: none;
-    opacity: 0.7; /* Slightly reduced initial opacity for icons */
+    opacity: 0.75; /* Slightly reduced opacity for icons */
     transition: opacity 0.3s ease, transform 0.2s ease;
-    font-size: 1.4rem; /* Slightly reduced size of icons */
-  }
-  
-  /* Social Links Hover Effect */
-  .social-links a:hover {
+    font-size: 1.3rem; /* Slightly reduced size of icons */
+}
+
+/* Social Links Hover Effect */
+.social-links a:hover {
     opacity: 1;
-    transform: translateY(-4px); /* Hover effect for a subtle lift */
-  }
-  
-  /* Footer Section Lists */
-  .footer-section ul {
+    transform: translateY(-3px); /* Slight hover lift */
+}
+
+/* Footer Section Lists */
+.footer-section ul {
     list-style: none;
     padding: 0;
-  }
-  
-  /* Footer Section List Items */
-  .footer-section ul li {
-    margin-bottom: 0.8rem; /* More space between list items */
-  }
-  
-  /* Footer Section List Links */
-  .footer-section ul li a {
+}
+
+/* Footer Section List Items */
+.footer-section ul li {
+    margin-bottom: 0.6rem; /* Reduced space between list items */
+}
+
+/* Footer Section List Links */
+.footer-section ul li a {
     color: white;
     text-decoration: none;
     opacity: 0.8;
     transition: opacity 0.3s ease, transform 0.2s ease;
     font-size: 0.95rem; /* Slightly smaller font size */
-  }
-  
-  /* Footer Section List Links Hover Effect */
-  .footer-section ul li a:hover {
+}
+
+/* Footer Section List Links Hover Effect */
+.footer-section ul li a:hover {
     opacity: 1;
-    transform: translateX(4px); /* Slight movement on hover */
-  }
-  
-  /* Footer Bottom */
-  .footer-bottom {
+    transform: translateX(3px); /* Slight movement on hover */
+}
+
+/* Footer Bottom */
+.footer-bottom {
     text-align: center;
     padding-top: 1rem; /* Reduced top padding */
     border-top: 1px solid rgba(255, 255, 255, 0.2); /* Slightly lighter border */
     font-size: 0.85rem; /* Smaller font size for copyright text */
-  }
-  
-  /* Footer Bottom Text */
-  .footer-bottom p {
+}
+
+/* Footer Bottom Text */
+.footer-bottom p {
     opacity: 0.7;
     color: #d1d5db; /* Light grey color for footer text */
-  }
-  
-  /* Responsive Design for Footer */
-  @media (max-width: 1024px) {
+}
+
+/* Responsive Design for Footer */
+@media (max-width: 1024px) {
     .footer-section h3 {
-        font-size: 1.2rem; /* Reduce header size for smaller screens */
+        font-size: 1.1rem; /* Further reduce header size for smaller screens */
     }
-  
+
     .social-links {
-        gap: 0.8rem; /* Slightly reduce gap between icons */
+        gap: 0.6rem; /* Further reduce gap between icons */
     }
-  }
-  
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
     .footer-content {
         grid-template-columns: 1fr; /* Stack sections on smaller screens */
-        gap: 1.5rem; /* Reduced gap */
+        gap: 1.2rem; /* Adjusted gap between sections */
     }
-  
+
     .footer-section h3 {
         text-align: center;
     }
-  
+
     .footer-bottom {
-        padding-top: 1rem; /* Match reduced padding */
+        padding-top: 0.8rem; /* Reduced padding to match compact design */
     }
-  }
-  
+}

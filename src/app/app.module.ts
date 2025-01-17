@@ -14,6 +14,10 @@ import { AboutpageComponent } from './aboutpage/aboutpage.component';
 import { ContactpageComponent } from './contactpage/contactpage.component';
 import { TermsComponent } from './terms/terms.component';
 import { PoliciesComponent } from './policies/policies.component';
+import { HomeComponent } from './homepage/homepage.component';
+import { BookingformComponent } from './bookingform/bookingform.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,11 @@ import { PoliciesComponent } from './policies/policies.component';
     AboutpageComponent,
     ContactpageComponent,
     TermsComponent,
-    PoliciesComponent
+    PoliciesComponent,
+    HomeComponent,
+    BookingformComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

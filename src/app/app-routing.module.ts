@@ -10,6 +10,10 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { PoliciesComponent } from './policies/policies.component';
 import { TermsComponent } from './terms/terms.component';
+import { AdminComponent } from './admin/admin.component';
+import { BookingsComponent } from './bookings/bookings.component';
+import { DestinationsComponent } from './destinations/destinations.component';
+
 
 const routes: Routes = [
   { path: 'payment', component: PaymentformComponent },  // Home route
@@ -20,6 +24,11 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'policies', component: PoliciesComponent },
   { path: 'terms', component: TermsComponent },
+  { path: '', component: HomeComponent },
+  { path: 'admin', component: AdminComponent },
+  { path: 'bookings', component: BookingsComponent },
+  { path: 'destinations', component: DestinationsComponent },
+  { path: '', redirectTo: '/admin', pathMatch: 'full' },
 
   
   { path: 'about', component: AboutpageComponent }, // Success route

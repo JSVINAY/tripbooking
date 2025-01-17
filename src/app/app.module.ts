@@ -3,7 +3,7 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'; 
 import { RouterModule } from '@angular/router';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PaymentformComponent } from './paymentform/paymentform.component';
@@ -18,6 +18,10 @@ import { HomeComponent } from './homepage/homepage.component';
 import { BookingformComponent } from './bookingform/bookingform.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { AdminComponent } from './admin/admin.component';
+import { BookingsComponent } from './bookings/bookings.component';
+import { DestinationsComponent } from './destinations/destinations.component';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +37,11 @@ import { SignupComponent } from './signup/signup.component';
     HomeComponent,
     BookingformComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    AdminComponent,
+    BookingsComponent,
+    DestinationsComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -41,6 +49,7 @@ import { SignupComponent } from './signup/signup.component';
     FormsModule,
     HttpClientModule,
     RouterModule,
+    ReactiveFormsModule,
   ],
   providers: [
     provideClientHydration()

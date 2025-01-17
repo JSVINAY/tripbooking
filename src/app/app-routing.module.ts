@@ -14,7 +14,8 @@ import { TermsComponent } from './terms/terms.component';
 const routes: Routes = [
   { path: 'payment', component: PaymentformComponent },  // Home route
   { path: 'payment-success', component: PaymentsuccessComponent }, // Success route
-  { path: 'home', component: HomeComponent }, // Success route
+  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent }, // Success route
   { path: 'booking', component: BookingformComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },

@@ -2,7 +2,7 @@
     <p>Select Payment Method</p>
     <div class="container">
       <div class="payment-box">
-        
+    
         <!-- Payment Method Selection -->
         <section class="row options first">
           <div class="item">
@@ -15,7 +15,7 @@
             <img class="img" src="assets/paypal.png" alt="PayPal" />
           </div>
         </section>
-  
+    
         <section class="row options no-border-bottom">
           <div class="item">
             <label class="label">
@@ -29,54 +29,36 @@
             <img class="img" src="assets/jcb_card.png" alt="JCB" />
           </div>
         </section>
-  
+    
         <!-- Credit Card Form Fields -->
         <section class="row blanks">
           <div class="col">
             <div class="item">
               <span class="title">Card number</span>
-              <input
-                class="blank card-number"
-                [(ngModel)]="cardNumber"
-                placeholder="4111 1111 1111 1111"
-                maxlength="19"
-                required
-              />
+              <input class="blank card-number" [(ngModel)]="cardNumber" placeholder="4111 1111 1111 1111" maxlength="19" required />
             </div>
           </div>
         </section>
-  
+    
         <section class="row blanks last">
           <div class="col">
             <div class="item">
               <span class="title">Expiry</span>
-              <input
-                class="blank"
-                [(ngModel)]="expiryDate"
-                placeholder="MM/YY"
-                maxlength="5"
-                required
-              />
+              <input class="blank" [(ngModel)]="expiryDate" placeholder="MM/YY" maxlength="5" required />
             </div>
           </div>
           <div class="col">
             <div class="item">
               <span class="title">CVC</span>
-              <input
-                class="blank"
-                [(ngModel)]="cvv"
-                placeholder="123"
-                maxlength="3"
-                required
-              />
+              <input class="blank" [(ngModel)]="cvv" placeholder="123" maxlength="3" required />
             </div>
           </div>
           <img class="info-icon" src="assets/info.png" alt="info" />
         </section>
-  
+    
       </div>
-  
-      <!-- Payment Button that triggers form submission and navigation -->
+    
+      <!-- Payment Button that triggers form submission -->
       <button class="payment-btn" type="button" (click)="handleSubmit()">
         <img src="assets/lock.png" alt="Lock" /> Finish and Pay
       </button>

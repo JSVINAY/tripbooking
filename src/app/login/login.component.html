@@ -1,0 +1,60 @@
+<div class="modal-container" [class.show]="isModalOpen">
+    <!-- Modal Background -->
+    <div class="modal-overlay" (click)="closeModal()"></div>
+  
+    <!-- Modal Content -->
+    <div class="modal">
+      <div class="modal-left">
+        <img src="assets/images/login-left-image.jpg" alt="Decorative" class="modal-image" />
+      </div>
+      <div class="modal-right">
+        <div class="modal-header">
+          <img src="assets/logo.jpg" alt="Logo" class="modal-logo" />
+          <h2>Welcome To Holiday Maker's </h2>
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <!-- Email Input -->
+          <div>
+            <input
+              formControlName="username"
+              type="email"
+              placeholder="Email address"
+              [ngClass]="{ 'is-invalid': loginForm.get('username')?.invalid && loginForm.get('username')?.touched }"
+            />
+            <div class="error-message" *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">
+              <small>Email is required and must be valid.</small>
+            </div>
+          </div>
+  
+          <!-- Password Input -->
+          <div>
+            <input
+              formControlName="password"
+              type="password"
+              placeholder="Password"
+              [ngClass]="{ 'is-invalid': loginForm.get('password')?.invalid && loginForm.get('password')?.touched }"
+            />
+            <div class="error-message" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+              <small>Password is required.</small>
+            </div>
+          </div>
+  
+          <!-- Submit Button -->
+          <button type="submit" [disabled]="loginForm.invalid">Login</button>
+        </form>
+        <div class="modal-links">
+          <a href="#">Forgot password?</a>
+        </div>
+        <div class="modal-links-2"
+            > Dont have an account?<a href="#"> Register here</a>
+          </div>
+        <div class="modal-footer">
+          <a href="#">Terms of use</a> | <a href="#">Privacy policy</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Open Modal Button -->
+  <button class="open-modal-btn" (click)="openModal()">Login</button>
+  

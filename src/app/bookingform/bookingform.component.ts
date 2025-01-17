@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './bookingform.component.css'
 })
 export class BookingformComponent {
-
 }
+

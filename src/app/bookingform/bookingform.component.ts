@@ -7,11 +7,13 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./bookingform.component.css']
 })
 export class BookingformComponent {
-  // Model to hold booking information
+  // Model to hold booking information, including new Gov ID Type and Gov ID Number
   booking = {
     destination: '',
     pickupLocation: '',
-    dropLocation: ''
+    dropLocation: '',
+    govIdType: '', // New field for government ID type
+    govIdNumber: '' // New field for government ID number
   };
 
   // Array to hold passenger information

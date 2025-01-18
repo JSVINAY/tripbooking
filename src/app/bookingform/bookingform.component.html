@@ -1,7 +1,7 @@
 <div class="booking-form">
     <h2>Book Your Stay</h2>
     <form (ngSubmit)="onSubmit()">
-    
+      
       <!-- Select Your Destination -->
       <label for="destination">Select Your Destination:</label>
       <select id="destination" name="destination" required [(ngModel)]="booking.destination">
@@ -11,7 +11,7 @@
         <option value="newyork">New York</option>
         <option value="tokyo">Tokyo</option>
       </select><br />
-  
+    
       <!-- Passenger Details in Table -->
       <h3>Passenger Details</h3>
       <table>
@@ -39,35 +39,49 @@
             </td>
             <td>
               <button class="plus-minus-button" type="button" (click)="removePassenger(i)" aria-label="Remove passenger">-</button>
+              <button class="save-button" type="button">Save</button>
             </td>
           </tr>
         </tbody>
       </table>
-  
+    
       <!-- Add Passenger Button -->
       <button class="plus-minus-button" type="button" (click)="addPassenger()" aria-label="Add passenger">+</button><br />
-  
-     
+    
       <!-- Type of Stay (Dropdown) -->
-<label for="stay-type">Type of Stay:</label>
-<select id="stay-type" name="stay-type" [(ngModel)]="stayTypes" required aria-label="Type of stay options">
-  <option value="" disabled>Select a type of stay</option>
-  <option value="hotel">Hotel</option>
-  <option value="resort">Resort</option>
-  <option value="hostel">Hostel</option>
-  <option value="villa">Villa</option>
-</select><br />
-
-  
+      <label for="stay-type">Type of Stay:</label>
+      <select id="stay-type" name="stay-type" [(ngModel)]="stayTypes" required aria-label="Type of stay options">
+        <option value="" disabled>Select a type of stay</option>
+        <option value="hotel">Hotel</option>
+        <option value="resort">Resort</option>
+        <option value="hostel">Hostel</option>
+        <option value="villa">Villa</option>
+      </select><br />
+    
       <!-- Pick-up Location -->
       <label for="pickup-location">Pick-up Location:</label>
       <input type="text" [(ngModel)]="booking.pickupLocation" name="pickup-location" id="pickup-location" required placeholder="Enter pick-up location" aria-label="Pick-up location" /><br />
-  
+    
       <!-- Drop Location -->
       <label for="drop-location">Drop Location:</label>
       <input type="text" [(ngModel)]="booking.dropLocation" name="drop-location" id="drop-location" required placeholder="Enter drop location" aria-label="Drop location" /><br />
-  
+    
+      <!-- Government ID Type -->
+      <label for="gov-id-type">Government ID Type:</label>
+      <select id="gov-id-type" name="gov-id-type" [(ngModel)]="booking.govIdType" required aria-label="Select Government ID Type">
+        <option value="" disabled>Select a government ID type</option>
+        <option value="passport">Passport</option>
+        <option value="drivers-license">Driver's License</option>
+        <option value="national-id">National ID</option>
+        <option value="voter-id">Voter ID</option>
+      </select><br />
+    
+      <!-- Government ID Number -->
+      <label for="gov-id-number">Government ID Number:</label>
+      <input type="text" [(ngModel)]="booking.govIdNumber" name="gov-id-number" id="gov-id-number" required placeholder="Enter Government ID number" aria-label="Government ID number" /><br />
+    
       <!-- Submit Button -->
-      <a routerLink="/payment"><button type="submit">Submit</button></a>
+      <a routerLink="/"><button type="submit">Submit</button></a>
     </form>
   </div>
+  

@@ -22,7 +22,6 @@ import { AdminComponent } from './admin/admin.component';
 import { BookingsComponent } from './bookings/bookings.component';
 import { DestinationsComponent } from './destinations/destinations.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

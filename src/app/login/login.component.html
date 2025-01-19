@@ -17,12 +17,7 @@
             <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                 <!-- Email Input -->
                 <div>
-                    <input formControlName="username" type="email" placeholder="Email address"
-                        [ngClass]="{ 'is-invalid': loginForm.get('username')?.invalid && loginForm.get('username')?.touched }" />
-                    <div class="error-message"
-                        *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">
-                        <small>Email is required and must be valid.</small>
-                    </div>
+                    <input formControlName="username" type="text" placeholder="Username" />
                 </div>
 
                 <!-- Password Input -->
@@ -36,7 +31,7 @@
                 </div>
 
                 <!-- Submit Button -->
-                <button type="submit" [disabled]="loginForm.invalid">Login</button>
+                <button type="submit"  (click)="prepareLoginData()">Login</button>
             </form>
             <div class="modal-links-2">
                 Don't have an account?<a routerLink="/signup">Sign Up</a>

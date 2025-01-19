@@ -18,7 +18,12 @@
         <!-- Phone Number -->
         <div class="input-box">
           <label>Phone Number</label>
-          <input type="number" formControlName="phoneNumber" placeholder="Enter phone number" required />
+          <input type="text" formControlName="phoneNumber" placeholder="Enter phone number" required />
+        </div>
+
+        <div class="input-box">
+          <label>Password</label>
+          <input type="text" formControlName="Password" placeholder="Enter New Password" required />
         </div>
   
         <!-- Gender -->
@@ -65,7 +70,7 @@
         </div>
   
         <!-- Submit Button -->
-        <button type="submit" [disabled]="signupForm.invalid">Sign Up</button>
+        <button type="submit"  (click)="signUpData()">Sign Up</button>
       </form>
     </div>
   </div>

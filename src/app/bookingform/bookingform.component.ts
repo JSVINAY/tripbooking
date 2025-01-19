@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-bookingform',
@@ -7,26 +8,41 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./bookingform.component.css']
 })
 export class BookingformComponent {
-  // Model to hold booking information, including new Gov ID Type and Gov ID Number
   booking = {
     destination: '',
     pickupLocation: '',
     dropLocation: '',
-    govIdType: '', // New field for government ID type
-    govIdNumber: '' // New field for government ID number
+    govIdType: '',
+    govIdNumber: ''
   };
 
-  // Array to hold passenger information
   passengers = [
-    { name: '', age: null, gender: '', foodType: '' },
+    {
+      name: '',
+      age: null,
+      gender: '',
+      foodType: ''
+    }
   ];
+  
+  user = {
+    id: localStorage.getItem('id'),
+    username: localStorage.getItem('username'),
+    email: localStorage.getItem('email'),
+    roles: [
+      {
+        name: localStorage.getItem('roles'),
+      }
+    ]
+  };
+
 
   // Store the selected stay type as a string
   stayTypes: string = '';  // Now a string, to hold the selected stay type
 
   maxPassengers: any;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute,private apiService: ApiService,private router: Router) {}
 
   ngOnInit(): void {
     // Get the peopleCount from the query parameters
@@ -51,6 +67,7 @@ export class BookingformComponent {
 
   // Submit method (logs the data to the console)
   onSubmit() {
+
     // Log the booking details, passenger details, and stay types to the console
     console.log('Booking Information:', this.booking);
     console.log('Passenger Details:', this.passengers);
@@ -58,5 +75,37 @@ export class BookingformComponent {
 
     // Optional: Add a success message or further logic if needed
     alert('Form submitted! Check the console for details.');
+  }
+  insertData(): void {
+    const jsonData = {
+      bookingId: 1,
+      destination: this.booking.destination,
+      passengers: this.passengers.map((passenger, index) => ({
+        id: index + 1,
+        name: passenger.name,
+        age: passenger.age,
+        gender: passenger.gender,
+        foodType: passenger.foodType,
+        govId: this.booking.govIdNumber,
+        govIdType: this.booking.govIdType
+      })),
+      stayType: this.stayTypes.toUpperCase(),
+      pickupLocation: this.booking.pickupLocation,
+      dropLocation: this.booking.dropLocation,
+      user: this.user
+    };
+    console.log(jsonData)
+    this.apiService.insertBookings(jsonData).subscribe(
+      response => {
+        console.log('Bookings Successfull', response);
+        this.router.navigate(['/']);
+      },
+      error => {
+        alert('Booking failed');
+        console.error('Booking failed', error);
+      }
+    );
+    console.log('Prepared JSON Data:', JSON.stringify(jsonData, null, 2));
+    // You can now send this JSON to your backend API
   }
 }

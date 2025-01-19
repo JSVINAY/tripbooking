@@ -33,7 +33,9 @@ const routes: Routes = [
 
   
   { path: 'about', component: AboutpageComponent }, // Success route
-  { path: 'contact', component: ContactpageComponent } // Success route
+  { path: 'contact', component: ContactpageComponent } ,// Success route
+
+  { path: 'component2/:data', component: LoginComponent }
 ];
 
 

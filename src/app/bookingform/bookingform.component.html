@@ -81,7 +81,7 @@
       <input type="text" [(ngModel)]="booking.govIdNumber" name="gov-id-number" id="gov-id-number" required placeholder="Enter Government ID number" aria-label="Government ID number" /><br />
     
       <!-- Submit Button -->
-      <a routerLink="/"><button type="submit">Submit</button></a>
+      <a routerLink="/payment"><button type="submit" (click)="insertData()">Submit</button></a>
     </form>
   </div>
   
